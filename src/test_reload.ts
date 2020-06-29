@@ -1,21 +1,34 @@
-// Test .get() and .count() methods
+//Index.ts(entry point)
 
-import * as storage from './models/conf_storage';
-import { UserTypeApp } from './models/usertype';
-
-//storage.storage.all();
-
-
-//function async exercise(): Promise < void> {
+import "reflect-metadata";
+import { createConnection } from "typeorm";
+import { UsersApp } from "./entity/user";
+import { UserTypeApp } from "./entity/usertype";
 
 
+createConnection().then(async connection => {
 
-console.log(`All objects: ${storage.storage.count()}`);
-console.log(`UsersType objects ${storage.storage.count('UserTypeApp')}`);
+    // crear dos tipos de usuario
+    const usert = new UserTypeApp();
+    usert.name = 'worker';
 
+    const usert2 = new UserTypeApp();
+    usert2.name = 'investor';
 
+    connection.manager.save(usert);
+    connection.manager.save(usert2);
 
-//let firstUserTypeId = Object.entries(storage.storage.all('UserTypeApp'))[0][1];
-//console.log(` id  ${firstUserTypeId}`);
-//console.log(`first userType ${storage.storage.getObj('UserTypeApp', '01d87957-0976-4635-a59c-48a2a192bc68')}`);
-//}
+    // crear dos usuario de tipo worker
+    const user1 = new UsersApp();
+    user1.firstName = 'Betty';
+
+    const user2 = new UsersApp();
+    user2.firstName = 'Holberton';
+
+    // asociacion de dos usuarios a un perfil
+    usert.usersApps = [user1, user2];
+
+    connection.manager.save(user1);
+    connection.manager.save(user2);
+
+}).catch(error => console.log(error));

@@ -11,6 +11,9 @@ import * as errMiddleware from './exceptions/error.middleware';
 import * as index from './routes/indexr';
 import * as userType from './routes/userTypeApp.routes';
 import * as motorCycle from './routes/motorCycle.routes';
+import * as driverLicense from './routes/driverlicense.routes';
+import * as movementType from './routes/movementyType.routes';
+import * as userAp from './routes/usersApp.routes';
 
 
 class Server {
@@ -56,6 +59,9 @@ class Server {
         this.app.use('/api/v1/', index.router);
         this.app.use('/api/v1/', userType.router);
         this.app.use('/api/v1/', motorCycle.router);
+        this.app.use('/api/v1/', driverLicense.router);
+        this.app.use('/api/v1/', movementType.router);
+        this.app.use('/api/v1/', userAp.router);
     }
 }
 

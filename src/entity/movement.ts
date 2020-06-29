@@ -1,5 +1,5 @@
 import { BaseModel } from './base_model';
-import { Entity, ManyToOne, JoinColumn, Column } from 'typeorm';
+import { Entity, ManyToOne, JoinColumn, Column, OneToMany } from 'typeorm';
 import { MovementType } from './movementType';
 
 
@@ -20,9 +20,13 @@ export class Movement extends BaseModel {
 
     */
 
-    @Column({ name: 'name_type', type: 'varchar', nullable: false, length: 12 })
-    name: string;
+    @Column({ name: 'movement_id', type: 'uuid', nullable: true })
+    movementId: string;
 
+    @Column({ name: 'movement_date', type: 'datetime', nullable: true })
+    numberMonth: Date = new Date();
+
+    // a tipo de usuario tiene muchos tipos usuarios
     @ManyToOne(type => MovementType, movementType => movementType.movements)
     @JoinColumn({ name: "user_type_id" })
     movementType: MovementType;

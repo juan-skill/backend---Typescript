@@ -14,5 +14,5 @@ export class UserTypeApp extends BaseModel {
     base: BaseModel;*/
 
     @OneToMany(type => UsersApp, usersApp => usersApp.userTypeApp, { eager: true, cascade: true })
-    usersApp: UsersApp[];
+    usersApps: UsersApp[];
 }

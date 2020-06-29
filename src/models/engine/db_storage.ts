@@ -5,18 +5,20 @@ import { BaseModel } from '../base_model';
 import { UsersApp } from '../user';
 import { UserTypeApp } from '../usertype';
 import { MotorCycle } from '../moto';
+import { DriverLicense } from '../driverlicense';
+import { MovementType } from "../movementType";
 /*
 import { Capital } from '../capital';
 import { Category } from '../category';
 import { CreditDetail } from '../credit_detail';
 import { CreditPayment } from '../creditpayment';
 import { Credit } from '../credit';
-import { DriverLicense } from '../driverlicense';
+
 import { InversionDetail } from '../inversionDetail';
 import { Inversion } from '../inversion';
 
 import { Movement } from '../movement';
-import { MovementType } from '../movementType';
+
 import { Product } from '../product';
 import { Withdrawal } from '../withdrawl';
 
@@ -28,22 +30,24 @@ import { createConnection } from 'net';
 export class DBStorage {
 
     private _engine: Connection = null;
-    private _listObjects: { [key: string]: BaseModel } = {};
+
     private _classes = [
         { 'name': 'UsersApp', 'obj': UsersApp, 'db': 'users_app' },
         { 'name': 'UserTypeApp', 'obj': UserTypeApp, 'db': 'user_type_app' },
-        { 'name': 'MotorCycle', 'obj': MotorCycle, 'db': 'motor_cycle' }
+        { 'name': 'MotorCycle', 'obj': MotorCycle, 'db': 'motor_cycle' },
+        { 'name': 'DriverLicense', 'obj': DriverLicense, 'db': 'driver_license' },
+        { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' }
         /*{ 'name': 'Capital', 'obj': Capital },
         { 'name': 'Category', 'obj': Category },
         { 'name': 'CreditDetail', 'obj': CreditDetail },
         { 'name': 'CreditPayment', 'obj': CreditPayment },
         { 'name': 'Credit', 'obj': Credit },
-        { 'name': 'DriverLicense', 'obj': DriverLicense },
+
         { 'name': 'InversionDetail', 'obj': InversionDetail },
         { 'name': 'Inversion', 'obj': Inversion },
 
         { 'name': 'Movement', 'obj': Movement },
-        { 'name': 'MovementType', 'obj': MovementType },
+
         { 'name': 'Product', 'obj': Product },
         { 'name': 'Withdrawal', 'obj': Withdrawal }*/
     ];
@@ -136,7 +140,7 @@ export class DBStorage {
             await repository.save(baseModel);
 
         } catch (e) {
-            console.error(`\n\nError deleting db: \n\t${e} \n\t${e.message} `);
+            console.error(`\n\nError saving db: \n\t${e} \n\t${e.message} `);
         }
 
     }

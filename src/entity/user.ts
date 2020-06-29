@@ -38,7 +38,7 @@ export class UsersApp extends BaseModel {
     /*@Column(type => BaseModel)
     base: BaseModel;*/
 
-    @ManyToOne(type => UserTypeApp, userTypeApp => userTypeApp.usersApp)
+    @ManyToOne(type => UserTypeApp, userTypeApp => userTypeApp.usersApps)
     @JoinColumn({ name: 'user_type_id' })
     userTypeApp: UserTypeApp;
 

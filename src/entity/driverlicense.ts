@@ -17,10 +17,10 @@ export class DriverLicense extends BaseModel {
             super(objCopy);
         }
     */
-    @Column({ name: 'authorized_categories', type: 'varchar', nullable: false, length: 100 })
+    @Column({ name: 'authorized_categories', type: 'varchar', nullable: true, length: 100 })
     authorized: string;
 
-    @Column({ name: 'organis_of_traffic', type: 'varchar', nullable: false, length: 100 })
+    @Column({ name: 'organis_of_traffic', type: 'varchar', nullable: true, length: 100 })
     organism: string;
 
     // a tipo de usuario tiene muchos tipos usuarios

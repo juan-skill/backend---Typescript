@@ -3,13 +3,19 @@ import * as storage from '../../models/conf_storage';
 import { UsersApp } from '../../models/user';
 import { UserTypeApp } from '../../models/usertype';
 import { Response, Request } from 'express';
+import { MotorCycle } from '../../models/moto';
+import { DriverLicense } from '../../models/driverlicense';
+import { MovementType } from '../../models/movementType';
 
 
 const sleep = util.promisify(setTimeout);
 
 let _classes = [
     { 'name': 'UsersApp', 'obj': UsersApp, 'db': 'users_app' },
-    { 'name': 'UserTypeApp', 'obj': UserTypeApp, 'db': 'user_type_app' }
+    { 'name': 'UserTypeApp', 'obj': UserTypeApp, 'db': 'user_type_app' },
+    { 'name': 'MotorCycle', 'obj': MotorCycle, 'db': 'motor_cycle' },
+    { 'name': 'DriverLicense', 'obj': DriverLicense, 'db': 'driver_license' },
+    { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' }
 ];
 
 

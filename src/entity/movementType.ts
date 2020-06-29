@@ -1,5 +1,5 @@
 import { BaseModel } from './base_model';
-import { Entity, Column, OneToMany } from 'typeorm';
+import { Entity, Column, OneToMany, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
 import { Movement } from './movement';
 
 
@@ -16,15 +16,10 @@ export class MovementType extends BaseModel {
             super(objCopy);
         }
     */
+    @Column({ name: 'name_type', type: 'varchar', nullable: true, length: 12 })
+    name: string;
 
-    @Column({ name: 'movement_id', type: 'uuid', nullable: false })
-    movementId: string;
-
-    @Column({ name: 'movement_date', type: 'datetime', })
-    numberMonth: Date = new Date();
-
-    // a tipo de usuario tiene muchos tipos usuarios
-    @OneToMany(type => Movement, movement => movement.movementType, { eager: true, cascade: true })
+    @OneToOne(type => Movement, movement => movement.movementType)
     movements: Movement[];
 
 }
