@@ -18,16 +18,14 @@ export class InversionDetail extends BaseModel {
     /*    public constructor(objCopy?: any) {
             super(objCopy);
             }*/
-    @Column({ name: 'interes_rate', type: 'decimal', nullable: false, precision: 3, scale: 2 })
+
+    @Column({ name: 'interes_rate', type: 'decimal', nullable: true, precision: 3, scale: 2 })
     interesRate: number;
 
-    @Column({ name: 'final_term', type: 'datetime' })
-    finalTerm: Date = new Date();
-
-    @Column({ name: 'number_of_month', type: 'int', precision: 2 })
+    @Column({ name: 'number_of_month', type: 'int', precision: 2, nullable: true })
     numberMonth: number;
 
-    @ManyToOne(type => Inversion, inversion => inversion.inversionsDetail)
+    @ManyToOne(type => Inversion, inversion => inversion.inversionDetail)
     @JoinColumn({ name: "inversion_id" })
     inversion: Inversion;
 

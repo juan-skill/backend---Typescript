@@ -13,6 +13,7 @@ export class UserTypeApp extends BaseModel {
     /*@Column(type => BaseModel)
     base: BaseModel;*/
 
+    //    @OneToMany(type => UsersApp, usersApp => usersApp.userTypeApp, { cascade: ["insert", "update", "remove"] })
     @OneToMany(type => UsersApp, usersApp => usersApp.userTypeApp, { eager: true, cascade: true })
     usersApps: UsersApp[];
 }

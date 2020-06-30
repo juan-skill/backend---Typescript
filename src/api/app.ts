@@ -14,6 +14,9 @@ import * as motorCycle from './routes/motorCycle.routes';
 import * as driverLicense from './routes/driverlicense.routes';
 import * as movementType from './routes/movementyType.routes';
 import * as userAp from './routes/usersApp.routes';
+import * as inversin from './routes/inversion.routes';
+import * as inversionDet from './routes/inversionDetail.routes';
+import * as withdrawal from './routes/withdrawal.routes';
 
 
 class Server {
@@ -62,6 +65,9 @@ class Server {
         this.app.use('/api/v1/', driverLicense.router);
         this.app.use('/api/v1/', movementType.router);
         this.app.use('/api/v1/', userAp.router);
+        this.app.use('/api/v1/', inversin.router);
+        this.app.use('/api/v1/', inversionDet.router);
+        this.app.use('/api/v1/', withdrawal.router);
     }
 }
 

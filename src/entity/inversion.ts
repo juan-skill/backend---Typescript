@@ -28,7 +28,7 @@ export class Inversion extends BaseModel {
     usersInvestor: UsersApp;
 
     @OneToMany(type => InversionDetail, inversionDetail => inversionDetail.inversion, { eager: true, cascade: true })
-    inversionsDetail: InversionDetail[];
+    inversionDetail: InversionDetail[];
 
     @OneToMany(type => Withdrawal, withdraw => withdraw.inversion, { eager: true, cascade: true })
     withdraws: Withdrawal[];

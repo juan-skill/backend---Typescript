@@ -6,6 +6,9 @@ import { Response, Request } from 'express';
 import { MotorCycle } from '../../models/moto';
 import { DriverLicense } from '../../models/driverlicense';
 import { MovementType } from '../../models/movementType';
+import { Inversion } from '../../models/inversion';
+import { InversionDetail } from '../../models/inversionDetail';
+import { Withdrawal } from '../../models/withdrawl';
 
 
 const sleep = util.promisify(setTimeout);
@@ -15,7 +18,10 @@ let _classes = [
     { 'name': 'UserTypeApp', 'obj': UserTypeApp, 'db': 'user_type_app' },
     { 'name': 'MotorCycle', 'obj': MotorCycle, 'db': 'motor_cycle' },
     { 'name': 'DriverLicense', 'obj': DriverLicense, 'db': 'driver_license' },
-    { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' }
+    { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' },
+    { 'name': 'Inversion', 'obj': Inversion, 'db': 'inversion' },
+    { 'name': 'InversionDetail', 'obj': InversionDetail, 'db': 'inversion_detail' },
+    { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' }
 ];
 
 

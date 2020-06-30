@@ -2,11 +2,17 @@ import "reflect-metadata";
 import { Connection, ConnectionManager, Repository } from 'typeorm';
 import * as dotenv from 'dotenv';
 import { BaseModel } from '../base_model';
-import { UsersApp } from '../user';
+
 import { UserTypeApp } from '../usertype';
+import { UsersApp } from '../user';
+import { Inversion } from '../inversion';
+import { InversionDetail } from '../inversionDetail';
+import { Withdrawal } from '../withdrawl';
+
 import { MotorCycle } from '../moto';
 import { DriverLicense } from '../driverlicense';
 import { MovementType } from "../movementType";
+
 /*
 import { Capital } from '../capital';
 import { Category } from '../category';
@@ -14,13 +20,13 @@ import { CreditDetail } from '../credit_detail';
 import { CreditPayment } from '../creditpayment';
 import { Credit } from '../credit';
 
-import { InversionDetail } from '../inversionDetail';
-import { Inversion } from '../inversion';
+
+
 
 import { Movement } from '../movement';
 
 import { Product } from '../product';
-import { Withdrawal } from '../withdrawl';
+
 
 import { Connection } from "typeorm";
 import { createConnection } from 'net';
@@ -36,20 +42,23 @@ export class DBStorage {
         { 'name': 'UserTypeApp', 'obj': UserTypeApp, 'db': 'user_type_app' },
         { 'name': 'MotorCycle', 'obj': MotorCycle, 'db': 'motor_cycle' },
         { 'name': 'DriverLicense', 'obj': DriverLicense, 'db': 'driver_license' },
-        { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' }
+        { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' },
+        { 'name': 'Inversion', 'obj': Inversion, 'db': 'inversion' },
+        { 'name': 'InversionDetail', 'obj': InversionDetail, 'db': 'inversion_detail' },
+        { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' }
         /*{ 'name': 'Capital', 'obj': Capital },
         { 'name': 'Category', 'obj': Category },
         { 'name': 'CreditDetail', 'obj': CreditDetail },
         { 'name': 'CreditPayment', 'obj': CreditPayment },
         { 'name': 'Credit', 'obj': Credit },
 
-        { 'name': 'InversionDetail', 'obj': InversionDetail },
-        { 'name': 'Inversion', 'obj': Inversion },
+
+
 
         { 'name': 'Movement', 'obj': Movement },
 
         { 'name': 'Product', 'obj': Product },
-        { 'name': 'Withdrawal', 'obj': Withdrawal }*/
+*/
     ];
 
     constructor() {
@@ -140,7 +149,7 @@ export class DBStorage {
             await repository.save(baseModel);
 
         } catch (e) {
-            console.error(`\n\nError saving db: \n\t${e} \n\t${e.message} `);
+            console.error(`\n\nError saving db: \n\t ${e} \n\t${e.message} `);
         }
 
     }
