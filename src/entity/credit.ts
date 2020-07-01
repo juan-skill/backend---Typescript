@@ -22,12 +22,14 @@ export class Credit extends BaseModel {
     /*@Column(type => BaseModel)
     base: BaseModel;*/
 
+    @Column({ name: 'name_product', type: 'varchar', nullable: true, length: 11 })
+    name: string;
+
     @ManyToOne(type => UsersApp, usersworker => usersworker.credits)
     @JoinColumn({ name: "worker_id" })
-    usersworker: UsersApp;
+    usersWorker: UsersApp;
 
-
-    @OneToMany(type => CreditDetail, creditDetail => creditDetail.credit, { eager: true, cascade: true })
+    @OneToMany(type => CreditDetail, creditDetail => creditDetail.credit, { eager: true, cascade: true, onDelete: "CASCADE" })
     creditsDetail: CreditDetail[];
 
     @OneToMany(type => CreditPayment, creditPayment => creditPayment.credit, { eager: true, cascade: true })

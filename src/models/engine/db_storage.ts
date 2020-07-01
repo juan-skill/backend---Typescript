@@ -8,23 +8,21 @@ import { UsersApp } from '../user';
 import { Inversion } from '../inversion';
 import { InversionDetail } from '../inversionDetail';
 import { Withdrawal } from '../withdrawl';
+import { Credit } from '../credit';
 
 import { MotorCycle } from '../moto';
 import { DriverLicense } from '../driverlicense';
 import { MovementType } from "../movementType";
+import { CreditDetail } from '../credit_detail';
+import { CreditPayment } from '../creditpayment';
 
 /*
 import { Capital } from '../capital';
 import { Category } from '../category';
-import { CreditDetail } from '../credit_detail';
-import { CreditPayment } from '../creditpayment';
-import { Credit } from '../credit';
-
 
 
 
 import { Movement } from '../movement';
-
 import { Product } from '../product';
 
 
@@ -45,18 +43,13 @@ export class DBStorage {
         { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' },
         { 'name': 'Inversion', 'obj': Inversion, 'db': 'inversion' },
         { 'name': 'InversionDetail', 'obj': InversionDetail, 'db': 'inversion_detail' },
-        { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' }
+        { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' },
+        { 'name': 'Credit', 'obj': Credit, 'db': 'credit' },
+        { 'name': 'CreditDetail', 'obj': CreditDetail, 'db': 'credit_detail' },
+        { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' },
         /*{ 'name': 'Capital', 'obj': Capital },
         { 'name': 'Category', 'obj': Category },
-        { 'name': 'CreditDetail', 'obj': CreditDetail },
-        { 'name': 'CreditPayment', 'obj': CreditPayment },
-        { 'name': 'Credit', 'obj': Credit },
-
-
-
-
         { 'name': 'Movement', 'obj': Movement },
-
         { 'name': 'Product', 'obj': Product },
 */
     ];

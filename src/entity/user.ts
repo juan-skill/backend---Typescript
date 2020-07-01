@@ -42,7 +42,7 @@ export class UsersApp extends BaseModel {
     @JoinColumn({ name: 'user_type_id' })
     userTypeApp: UserTypeApp;
 
-    @OneToMany(type => Credit, credit => credit.usersworker, { eager: true, cascade: true })
+    @OneToMany(type => Credit, credit => credit.usersWorker, { eager: true, cascade: true })
     credits: Credit[];
 
     @OneToMany(type => Inversion, inversion => inversion.usersInvestor, { eager: true, cascade: true })

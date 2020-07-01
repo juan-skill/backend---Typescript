@@ -17,6 +17,9 @@ import * as userAp from './routes/usersApp.routes';
 import * as inversin from './routes/inversion.routes';
 import * as inversionDet from './routes/inversionDetail.routes';
 import * as withdrawal from './routes/withdrawal.routes';
+import * as credit from './routes/credit.routes';
+import * as creditDetail from './routes/creditDetail.routes';
+import * as creditPayment from './routes/creditpayment.routes';
 
 
 class Server {
@@ -68,6 +71,9 @@ class Server {
         this.app.use('/api/v1/', inversin.router);
         this.app.use('/api/v1/', inversionDet.router);
         this.app.use('/api/v1/', withdrawal.router);
+        this.app.use('/api/v1/', credit.router);
+        this.app.use('/api/v1/', creditDetail.router);
+        this.app.use('/api/v1/', creditPayment.router);
     }
 }
 

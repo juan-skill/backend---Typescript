@@ -9,6 +9,9 @@ import { MovementType } from '../../models/movementType';
 import { Inversion } from '../../models/inversion';
 import { InversionDetail } from '../../models/inversionDetail';
 import { Withdrawal } from '../../models/withdrawl';
+import { Credit } from '../../models/credit';
+import { CreditDetail } from '../../models/credit_detail';
+import { CreditPayment } from '../../models/creditpayment';
 
 
 const sleep = util.promisify(setTimeout);
@@ -21,7 +24,10 @@ let _classes = [
     { 'name': 'MovementType', 'obj': MovementType, 'db': 'movement_type' },
     { 'name': 'Inversion', 'obj': Inversion, 'db': 'inversion' },
     { 'name': 'InversionDetail', 'obj': InversionDetail, 'db': 'inversion_detail' },
-    { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' }
+    { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' },
+    { 'name': 'Credit', 'obj': Credit, 'db': 'credit' },
+    { 'name': 'CreditDetail', 'obj': CreditDetail, 'db': 'credit_detail' },
+    { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' }
 ];
 
 
