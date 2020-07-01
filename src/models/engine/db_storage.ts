@@ -15,17 +15,12 @@ import { DriverLicense } from '../driverlicense';
 import { MovementType } from "../movementType";
 import { CreditDetail } from '../credit_detail';
 import { CreditPayment } from '../creditpayment';
-
+import { Category } from '../category';
+import { Product } from '../product';
 /*
 import { Capital } from '../capital';
-import { Category } from '../category';
-
-
 
 import { Movement } from '../movement';
-import { Product } from '../product';
-
-
 import { Connection } from "typeorm";
 import { createConnection } from 'net';
 */
@@ -47,11 +42,13 @@ export class DBStorage {
         { 'name': 'Credit', 'obj': Credit, 'db': 'credit' },
         { 'name': 'CreditDetail', 'obj': CreditDetail, 'db': 'credit_detail' },
         { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' },
-        /*{ 'name': 'Capital', 'obj': Capital },
-        { 'name': 'Category', 'obj': Category },
+        { 'name': 'Category', 'obj': Category, 'db': 'category' },
+        { 'name': 'Product', 'obj': Product, 'db': 'product' }
+        /*
+	  { 'name': 'Capital', 'obj': Capital },
+
         { 'name': 'Movement', 'obj': Movement },
-        { 'name': 'Product', 'obj': Product },
-*/
+ */
     ];
 
     constructor() {

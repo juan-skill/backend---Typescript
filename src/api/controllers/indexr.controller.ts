@@ -12,9 +12,12 @@ import { Withdrawal } from '../../models/withdrawl';
 import { Credit } from '../../models/credit';
 import { CreditDetail } from '../../models/credit_detail';
 import { CreditPayment } from '../../models/creditpayment';
+import { Category } from '../../models/category';
+import { Product } from '../../models/product';
 
 
 const sleep = util.promisify(setTimeout);
+
 
 let _classes = [
     { 'name': 'UsersApp', 'obj': UsersApp, 'db': 'users_app' },
@@ -27,7 +30,9 @@ let _classes = [
     { 'name': 'Withdrawal', 'obj': Withdrawal, 'db': 'withdrawal' },
     { 'name': 'Credit', 'obj': Credit, 'db': 'credit' },
     { 'name': 'CreditDetail', 'obj': CreditDetail, 'db': 'credit_detail' },
-    { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' }
+    { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' },
+    { 'name': 'Category', 'obj': Category, 'db': 'category' },
+    { 'name': 'Product', 'obj': Product, 'db': 'product' }
 ];
 
 

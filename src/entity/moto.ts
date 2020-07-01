@@ -32,11 +32,9 @@ export class MotorCycle extends BaseModel {
     @Column({ name: 'performance', type: 'varchar', nullable: true, length: 100 })
     performance: string;
 
-    @Column({ name: 'turned_on', type: 'varchar', nullable: true, length: 100 })
-    turnedOn: string;
 
     // a tipo de usuario tiene muchos tipos usuarios
-    @OneToMany(type => Category, category => category.motorCycle, { eager: true, cascade: true })
+    @OneToMany(type => Category, category => category.motorCycle, { eager: true, cascade: true, onDelete: 'CASCADE', onUpdate: 'CASCADE' })
     categorys: Category[];
 
 }

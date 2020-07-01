@@ -16,7 +16,7 @@ export class Product extends BaseModel {
     /*    public constructor(objCopy?: any) {
             super(objCopy);
             }*/
-    @Column({ name: 'name', type: 'varchar', nullable: false, length: 12 })
+    @Column({ name: 'name', type: 'varchar', nullable: false, length: 50 })
     name: string;
 
     @ManyToOne(type => Category, category => category.products)

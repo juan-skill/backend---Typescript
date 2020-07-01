@@ -23,7 +23,7 @@ export class DriverLicense extends BaseModel {
     @Column({ name: 'organis_of_traffic', type: 'varchar', nullable: true, length: 100 })
     organism: string;
 
-    // a tipo de usuario tiene muchos tipos usuarios
-    @OneToMany(type => Category, category => category.driverLicense, { eager: true, cascade: true })
+    // a tipo de usuario tiene muchos tipos usuarios50;5u
+    @OneToMany(type => Category, category => category.driverLicense, { eager: true, cascade: true, onDelete: 'CASCADE', onUpdate: 'CASCADE' })
     categorys: Category[];
 }

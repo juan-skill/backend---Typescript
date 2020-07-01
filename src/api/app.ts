@@ -20,6 +20,9 @@ import * as withdrawal from './routes/withdrawal.routes';
 import * as credit from './routes/credit.routes';
 import * as creditDetail from './routes/creditDetail.routes';
 import * as creditPayment from './routes/creditpayment.routes';
+import * as category from './routes/category.routes';
+import * as product from './routes/product.routes';
+
 
 
 class Server {
@@ -74,6 +77,8 @@ class Server {
         this.app.use('/api/v1/', credit.router);
         this.app.use('/api/v1/', creditDetail.router);
         this.app.use('/api/v1/', creditPayment.router);
+        this.app.use('/api/v1/', category.router);
+        this.app.use('/api/v1/', product.router);
     }
 }
 
