@@ -14,6 +14,8 @@ import { CreditDetail } from '../../models/credit_detail';
 import { CreditPayment } from '../../models/creditpayment';
 import { Category } from '../../models/category';
 import { Product } from '../../models/product';
+import { Capital } from '../../models/capital';
+import { Movement } from '../../models/movement';
 
 
 const sleep = util.promisify(setTimeout);
@@ -32,7 +34,9 @@ let _classes = [
     { 'name': 'CreditDetail', 'obj': CreditDetail, 'db': 'credit_detail' },
     { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' },
     { 'name': 'Category', 'obj': Category, 'db': 'category' },
-    { 'name': 'Product', 'obj': Product, 'db': 'product' }
+    { 'name': 'Product', 'obj': Product, 'db': 'product' },
+    { 'name': 'Capital', 'obj': Capital, 'db': 'capital' },
+    { 'name': 'Movement', 'obj': Movement, 'db': 'movement' }
 ];
 
 

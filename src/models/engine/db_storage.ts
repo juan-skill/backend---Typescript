@@ -17,10 +17,10 @@ import { CreditDetail } from '../credit_detail';
 import { CreditPayment } from '../creditpayment';
 import { Category } from '../category';
 import { Product } from '../product';
-/*
 import { Capital } from '../capital';
-
 import { Movement } from '../movement';
+/*
+
 import { Connection } from "typeorm";
 import { createConnection } from 'net';
 */
@@ -43,12 +43,9 @@ export class DBStorage {
         { 'name': 'CreditDetail', 'obj': CreditDetail, 'db': 'credit_detail' },
         { 'name': 'CreditPayment', 'obj': CreditPayment, 'db': 'credit_payments' },
         { 'name': 'Category', 'obj': Category, 'db': 'category' },
-        { 'name': 'Product', 'obj': Product, 'db': 'product' }
-        /*
-	  { 'name': 'Capital', 'obj': Capital },
-
-        { 'name': 'Movement', 'obj': Movement },
- */
+        { 'name': 'Product', 'obj': Product, 'db': 'product' },
+        { 'name': 'Capital', 'obj': Capital, 'db': 'capital' },
+        { 'name': 'Movement', 'obj': Movement, 'db': 'movement' }
     ];
 
     constructor() {

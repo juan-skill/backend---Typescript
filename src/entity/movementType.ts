@@ -19,7 +19,7 @@ export class MovementType extends BaseModel {
     @Column({ name: 'name_type', type: 'varchar', nullable: true, length: 12 })
     name: string;
 
-    @OneToOne(type => Movement, movement => movement.movementType)
+    @OneToOne(type => Movement, movement => movement.movementType, { eager: true, cascade: true, onDelete: "CASCADE", onUpdate: "CASCADE" })
     movements: Movement[];
 
 }

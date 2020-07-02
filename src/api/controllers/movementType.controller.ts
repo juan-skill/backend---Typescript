@@ -96,8 +96,8 @@ export const createNewMovementType = async (req: Request, res: Response): Promis
             return res.status(400).json({ "error": "Not Found" });
         }
 
-        if (!('numberMonth' in params && 'movementId' in params)) {
-            return res.status(400).json({ "error": "Not Found" });
+        if (!('name' in params)) {
+            return res.status(400).json({ "error": "Missing name attribute" });
         }
 
         let obj = new MovementType();
