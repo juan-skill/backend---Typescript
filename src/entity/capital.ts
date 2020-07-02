@@ -20,15 +20,15 @@ export class Capital {
     @PrimaryColumn()
     id: number;
 
-    @Column({ name: 'capital_amount', type: 'decimal', nullable: false, precision: 12, scale: 2 })
+    @Column({ name: 'capital_amount', type: 'decimal', nullable: true, precision: 12, scale: 2, default: 0 })
     capitalAmount: number;
 
-    @Column({ name: 'reserve', type: 'decimal', nullable: false, precision: 12, scale: 2 })
+    @Column({ name: 'reserve', type: 'decimal', nullable: true, precision: 12, scale: 2, default: 0 })
     reserve: number;
 
-    @Column({ name: 'number_of_credits', type: 'decimal', nullable: false })
+    @Column({ name: 'number_of_credits', type: 'decimal', nullable: true, default: 0 })
     creditsnumber: number;
 
-    @Column({ name: 'number_of_inversions', type: 'decimal', nullable: false })
+    @Column({ name: 'number_of_inversions', type: 'decimal', nullable: true, default: 0 })
     inversionsNumber: number;
 }
